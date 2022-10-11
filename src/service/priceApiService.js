@@ -1,6 +1,6 @@
 import db from '../models/index';
 
-const createNewSubscribe = async (data) => {
+const createNewPrice = async (data) => {
     try {
         await db.Price.create(data);
     } catch (e) {
