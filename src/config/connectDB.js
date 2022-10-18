@@ -1,9 +1,31 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize,DataTypes } = require('sequelize');
 
-const sequelize = Sequelize('meowshouse', 'root', null, {
-    host: 'localhost',
-    dialect: 'mysql'
-});
+
+const sequelize = new Sequelize(
+   'dev-meowhouse-web',
+   'dev',
+   'AVNS_Rzj0qutG1uW4dJJlsPq',
+    {
+      host: 'http://db-mysql-meowhouse-vn-do-user-12640654-0.b.db.ondigitalocean.com',
+      dialect: 'mysql',
+      port: '25060',
+    }
+);
+
+// var sequelize = new Sequelize('dev-meowhouse-web','dev','AVNS_Rzj0qutG1uW4dJJlsPq',{
+//     dialect: 'mysql',
+//     host: 'http://db-mysql-meowhouse-vn-do-user-12640654-0.b.db.ondigitalocean.com',
+//     port: 25060,
+//     logging: false,
+//     // dialectOptions: {
+//     //   encrypt: true
+//     // }
+// });
+
+// const sequelize = new Sequelize('meowshouse', 'root', null, {
+//     host: 'localhost',
+//     dialect: 'mysql'
+// });
 
 const connection = async () => {
     try {
@@ -14,4 +36,4 @@ const connection = async () => {
     }
 }
 
-export default connect;
+export default connection;

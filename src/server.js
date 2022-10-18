@@ -3,7 +3,7 @@ import express from 'express';
 import initApiRoutes from './routes/api';
 require("dotenv").config();
 import bodyParser from 'body-parser';
-// import connection from './config/'
+import connection from './config/connectDB';
 
 const app = express();
 const PORT = process.env.PORT || 9090;
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // test connection db 
-// connection();
+connection();
 
 // init web routes
 initApiRoutes(app);
